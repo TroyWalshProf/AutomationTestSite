@@ -9,9 +9,13 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build --prefix-paths && gh-pages -d public",
+    "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "push": "gatsby build --prefix-paths && gh-pages -f -d public",
+    "docker-build": "docker build -t automation-test-site --label automation-test-site .",
+    "docker-run": "docker run -d -p 8080:80 --name automation-test-suite automation-test-site",
+    "docker-stop": "docker container stop automation-test-suite"
   },
   "dependencies": {
     "gatsby": "^4.5.1",
