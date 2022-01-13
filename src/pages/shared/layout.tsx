@@ -32,7 +32,7 @@ const Layout = (props: any) => (
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">Manage<b className="caret"></b></a>
                                 <ul className="dropdown-menu">
                                     <li id="EmployeeButton">
-                                        <Link to="/Employee">
+                                        <Link to="/employees">
                                             Employees
                                         </Link>
                                     </li>
