@@ -13,7 +13,7 @@ import "./layout.css";
  *
  * TODO: Fix page title.
  * @param props React props. Children are required, and a page title is optional.
- * @returns A React element that wraps the children in a navigation bar and footer. 
+ * @returns A React element that wraps the children in a navigation bar and footer.
  */
 const Layout = (props: any) => {
   return (
@@ -43,7 +43,7 @@ const Layout = (props: any) => {
                 </a>
                 <ul className="dropdown-menu">
                   <li id="EmployeeButton">
-                    <Link to="/employees">Employees</Link>
+                    <Link to="/Employees">Employees</Link>
                   </li>
                   <li id="DepartmentsButton">
                     Html.ActionLink("Departments", "Index", "Departments")
@@ -102,7 +102,7 @@ const Layout = (props: any) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.elementType.isRequired,
   title: PropTypes.string,
 };
 
