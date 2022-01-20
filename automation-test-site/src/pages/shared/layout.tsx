@@ -6,6 +6,7 @@ import "../../../static/Content/bootstrap-theme.css";
 import "../../../static/Content/bootstrap.css";
 import "../../../static/Content/Site.css";
 import "./layout.css";
+import { ApplicationContext } from "../../hooks/context-hooks";
 
 /**
  * Layout for the Magenic Automation Site pages.
@@ -17,7 +18,7 @@ import "./layout.css";
  */
 const Layout = (props: any) => {
   return (
-    <React.Fragment>
+    <ApplicationContext>
       <div className="navbar navbar-inverse navbar-fixed-top">
         <div className="container">
           <div className="navbar-header">
@@ -35,7 +36,7 @@ const Layout = (props: any) => {
           <div className="navbar-collapse collapse">
             <ul className="nav navbar-nav">
               <li id="homeButton">
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">
@@ -97,7 +98,7 @@ const Layout = (props: any) => {
           <p>&copy; {new Date().getFullYear()} - Magenic Technologies</p>
         </footer>
       </div>
-    </React.Fragment>
+    </ApplicationContext>
   );
 };
 

@@ -1,72 +1,68 @@
-﻿import * as React from 'react';
-import { Layout } from '../shared/layout';
+﻿import React, { useEffect, useState } from "react";
+import { Layout } from "../shared/layout";
+import { Link, navigate } from "gatsby";
+import { useDeleteEmployee, useGetEmployee } from "../../hooks/employee-hooks";
 
 const Details = (props: any) => {
+  const DetailsInner = (props: any) => {
+    const getEmployee = useGetEmployee();
+    const [employee, setEmployee] = useState<any>(undefined);
+    const [id, setId] = useState<number>(undefined);
+
+    useEffect(() => {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const queryId = Number.parseInt(urlParams.get("id"));
+      setId(queryId);
+      setEmployee(getEmployee(queryId));
+    }, []);
+
     return (
-        <Layout
-            title="Details">
-            <h2>Details</h2>
+      <React.Fragment>
+        <h2>Details</h2>
 
-            <div>
-                <h4>Employee</h4>
-                <hr />
-                <dl className="dl-horizontal">
-                    <dt>
-                        Html.DisplayNameFor(model  model.CityObj.CityName)
-                    </dt>
+        <div>
+          <h4>Employee</h4>
+          <hr />
+          <dl className="dl-horizontal">
+            <dt>City</dt>
 
-                    <dd>
-                        tml.DisplayFor(model  model.CityObj.CityName)
-                    </dd>
+            <dd>{!!employee && employee.city}</dd>
 
-                    <dt>
-                        Html.DisplayNameFor(model  model.DepartmentObj.DepartmentName)
-                    </dt>
+            <dt>Department</dt>
 
-                    <dd>
-                        Html.DisplayFor(model  model.DepartmentObj.DepartmentName)
-                    </dd>
+            <dd>{!!employee && employee.department}</dd>
 
-                    <dt>
-                        Html.DisplayNameFor(model  model.StateObj.StateName)
-                    </dt>
+            <dt>State</dt>
 
-                    <dd>
-                        Html.DisplayFor(model  model.StateObj.StateName)
-                    </dd>
+            <dd>{!!employee && employee.state}</dd>
 
-                    <dt>
-                        Html.DisplayNameFor(model  model.EmpFirstName)
-                    </dt>
+            <dt>First Name</dt>
 
-                    <dd>
-                        Html.DisplayFor(model  model.EmpFirstName)
-                    </dd>
+            <dd>{!!employee && employee.firstName}</dd>
 
-                    <dt>
-                        Html.DisplayNameFor(model  model.EmpLastName)
-                    </dt>
+            <dt>Last Name</dt>
 
-                    <dd>
-                        Html.DisplayFor(model  model.EmpLastName)
-                    </dd>
+            <dd>{!!employee && employee.lastName}</dd>
 
-                    <dt>
-                        Html.DisplayNameFor(model  model.EmpAddress)
-                    </dt>
+            <dt>Address</dt>
 
-                    <dd>
-                        Html.DisplayFor(model  model.EmpAddress)
-                    </dd>
-
-                </dl>
-            </div>
-            <p>
-                Html.ActionLink("Edit", "Edit", new  id = Model.EmployeeID ) |
-                Html.ActionLink("Back to List", "Index")
-            </p>
-        </Layout>
+            <dd>{!!employee && employee.address}</dd>
+          </dl>
+        </div>
+        <p>
+          <Link to={`/Employees/Edit?id=${id}`}>Edit</Link> |
+          <Link to="/Employees">Back to List</Link>
+        </p>
+      </React.Fragment>
     );
-}
+  };
+
+  return (
+    <Layout title="Details">
+      <DetailsInner />
+    </Layout>
+  );
+};
 
 export default Details;

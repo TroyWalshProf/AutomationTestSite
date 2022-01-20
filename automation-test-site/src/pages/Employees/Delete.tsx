@@ -1,74 +1,79 @@
-﻿import * as React from 'react';
-import { Layout } from '../shared/layout';
+﻿import { Link, navigate } from "gatsby";
+import React, { useEffect, useState } from "react";
+import { useDeleteEmployee, useGetEmployee } from "../../hooks/employee-hooks";
+import { Layout } from "../shared/layout";
 
 const Delete = (props: any) => {
+  const DeleteInner = (props: any) => {
+    const deleteEmployee = useDeleteEmployee();
+    const getEmployee = useGetEmployee();
+    const [employee, setEmployee] = useState<any>(undefined);
+    const [id, setId] = useState<number>(undefined);
+
+    useEffect(() => {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const queryId = Number.parseInt(urlParams.get("id"));
+      setId(queryId);
+      setEmployee(getEmployee(queryId));
+    }, []);
+
     return (
-        <Layout
-            title="Delete">
-            <h2>Delete</h2>
+      <React.Fragment>
+        <h2>Delete</h2>
 
-            <h3>Are you sure you want to delete this?</h3>
-            <div>
-                <h4>Employee</h4>
-                <hr />
-                <dl className="dl-horizontal">
-                    <dt>
-            Html.DisplayNameFor(model  model.CityObj.CityName)
-                    </dt>
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+          <h4>Employee</h4>
+          <hr />
+          <dl className="dl-horizontal">
+            <dt>City</dt>
 
-                    <dd>
-            Html.DisplayFor(model  model.CityObj.CityName)
-                    </dd>
+            <dd>{!!employee && employee.city}</dd>
 
-                    <dt>
-            Html.DisplayNameFor(model  model.DepartmentObj.DepartmentName)
-                    </dt>
+            <dt>Department</dt>
 
-                    <dd>
-            Html.DisplayFor(model  model.DepartmentObj.DepartmentName)
-                    </dd>
+            <dd>{!!employee && employee.department}</dd>
 
-                    <dt>
-            Html.DisplayNameFor(model  model.StateObj.StateName)
-                    </dt>
+            <dt>State</dt>
 
-                    <dd>
-            Html.DisplayFor(model  model.StateObj.StateName)
-                    </dd>
+            <dd>{!!employee && employee.state}</dd>
 
-                    <dt>
-            Html.DisplayNameFor(model  model.EmpFirstName)
-                    </dt>
+            <dt>First Name</dt>
 
-                    <dd>
-            Html.DisplayFor(model  model.EmpFirstName)
-                    </dd>
+            <dd>{!!employee && employee.firstName}</dd>
 
-                    <dt>
-            Html.DisplayNameFor(model  model.EmpLastName)
-                    </dt>
+            <dt>Last Name</dt>
 
-                    <dd>
-            Html.DisplayFor(model  model.EmpLastName)
-                   </dd>
+            <dd>{!!employee && employee.lastName}</dd>
 
-                    <dt>
-            Html.DisplayNameFor(model  model.EmpAddress)
-                    </dt>
+            <dt>Address</dt>
 
-                    <dd>
-            Html.DisplayFor(model  model.EmpAddress)
-                    </dd>
-
-                </dl>
-
-                <div className="form-actions no-color">
-                    <input type="submit" value="Delete" className="btn btn-default" /> |
-                    Html.ActionLink("Back to List", "Index")
-                </div>
+            <dd>{!!employee && employee.address}</dd>
+          </dl>
+          {!!employee && (
+            <div className="form-actions no-color">
+              <input
+                onClick={() => {
+                  deleteEmployee(id);
+                  navigate("/Employees/");
+                }}
+                value="Delete"
+                className="btn btn-default"
+              />
+              |<Link to="/Employees">Back to List</Link>
             </div>
-        </Layout>
+          )}
+        </div>
+      </React.Fragment>
     );
-}
+  };
+
+  return (
+    <Layout title="Delete">
+      <DeleteInner />
+    </Layout>
+  );
+};
 
 export default Delete;

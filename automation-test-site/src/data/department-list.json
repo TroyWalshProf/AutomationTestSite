@@ -1,0 +1,60 @@
+{
+  "departments": [
+    {
+      "id": "1754",
+      "department": "Dev"
+    },
+    {
+      "id": "1755",
+      "department": "Quality Engineering"
+    },
+    {
+      "id": "1756",
+      "department": "IT"
+    },
+    {
+      "id": "1757",
+      "department": "DevOps"
+    },
+    {
+      "id": "1790",
+      "department": "HR"
+    },
+    {
+      "id": "1791",
+      "department": "Admin"
+    },
+    {
+      "id": "1796",
+      "department": "Magenic"
+    },
+    {
+      "id": "1810",
+      "department": "sampleDept"
+    },
+    {
+      "id": "1815",
+      "department": "test"
+    },
+    {
+      "id": "1906",
+      "department": "Magenic Manila Recruitment - 84"
+    },
+    {
+      "id": "2163",
+      "department": "Magenic Manila Recruitment"
+    },
+    {
+      "id": "2164",
+      "department": "Magenic Manila Recruitment - 101"
+    },
+    {
+      "id": "2170",
+      "department": "QE Dept"
+    },
+    {
+      "id": "2171",
+      "department": "Chirurgeon"
+    }
+  ]
+}
