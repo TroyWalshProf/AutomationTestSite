@@ -1,5 +1,5 @@
 ﻿import React, { useEffect, useState } from "react";
-import { Layout } from "../shared/layout";
+import { Layout } from "../../components/shared/layout";
 import { Link, navigate } from "gatsby";
 import { useDeleteEmployee, useGetEmployee } from "../../hooks/employee-hooks";
 

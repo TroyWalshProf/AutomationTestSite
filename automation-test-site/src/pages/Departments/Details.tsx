@@ -1,81 +1,76 @@
-﻿import * as React from 'react';
-import { Layout } from '../shared/layout';
+﻿import React, { useState, useEffect } from "react";
+import { Link } from "gatsby";
+import { Layout } from "../../components/shared/layout";
+import { getEmployees } from "../../hooks/employee-hooks";
+import { useGetDepartment } from "../../hooks/department-hooks";
 
 const Details = (props: any) => {
+  const DetailsInner = (props: any) => {
+    const [employees, setEmployees] = useState<any[]>(undefined);
+    const [id, setId] = useState<number>(undefined);
+    const [department, setDepartment] = useState<any>(undefined);
+    const allEmployees = getEmployees();
+    const getDepartment = useGetDepartment();
+
+    useEffect(() => {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const queryId = Number.parseInt(urlParams.get("id"));
+      setId(queryId);
+      setDepartment(getDepartment(queryId));
+      setEmployees(
+        allEmployees.filter((employee) => (employee.departmentId = queryId))
+      );
+    }, []);
 
     return (
-        <Layout
-            title="Details">
-            <h2>Model.Departments.DepartmentName</h2>
+      <React.Fragment>
+        <h2>{!!department ? department.department : ""}</h2>
 
-            <div>
-
-                <h1>Employees</h1>
-
-                <table className="table">
+        <div>
+          <h1>Employees</h1>
+          {!!employees ? (
+            <table className="table">
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>City</th>
+                <th>Department</th>
+                <th>State</th>
+                <th>Address</th>
+              </tr>
+              {!!employees &&
+                employees.map((employee) => {
+                  return (
                     <tr>
-
-
-                        <th>
-                            Html.DisplayNameFor(model = model.Employees[0].EmpFirstName)
-                        </th>
-                        <th>
-                            Html.DisplayNameFor(model = model.Employees[0].EmpLastName)
-                        </th>
-                        <th>
-                            Html.DisplayNameFor(model = model.Employees[0].CityObj.CityName)
-                        </th>
-                        <th>
-                            Html.DisplayNameFor(model = model.Employees[0].DepartmentObj.DepartmentName)
-                        </th>
-                        <th>
-                            Html.DisplayNameFor(model = model.Employees[0].StateObj.StateName)
-                        </th>
-
-                        <th>
-                            Html.DisplayNameFor(model = model.Employees[0].EmpAddress)
-                        </th>
-
-
+                      <td>{employee.firstName}</td>
+                      <td>{employee.lastName}</td>
+                      <td>{employee.city}</td>
+                      <td>{employee.department}</td>
+                      <td>{employee.state}</td>
+                      <td>{employee.address}</td>
                     </tr>
+                  );
+                })}
+            </table>
+          ) : (
+            <h1>No data</h1>
+          )}
+        </div>
 
-                    <tr>
-                        <td>
-                            Html.DisplayFor(modelItem = item.EmpFirstName)
-                        </td>
-                        <td>
-                            Html.DisplayFor(modelItem = item.EmpLastName)
-                        </td>
-                        <td>
-                            Html.DisplayFor(modelItem = item.CityObj.CityName)
-                        </td>
-                        <td>
-                            Html.DisplayFor(modelItem = item.DepartmentObj.DepartmentName)
-                        </td>
-                        <td>
-                            Html.DisplayFor(modelItem = item.StateObj.StateName)
-                        </td>
+        <p>
+          <Link to={`/Departments/Edit?id=${id}`}>Edit</Link>|
+          <Link to="/Departments">Back to List</Link>
+        </p>
+      </React.Fragment>
+    );
+  };
 
-                        <td>
-                            Html.DisplayFor(modelItem = item.EmpAddress)
-                        </td>
-
-                    </tr>
-                </table>
-
-                else
-                <h1>No data</h1>
-
-
-            </div>
-
-
-            <p>
-                Html.ActionLink("Edit", "Edit", new id = Model.Departments.DepartmentID) |
-                Html.ActionLink("Back to List", "Index")
-            </p>
-        </Layout>
-    )
-}
+  return (
+    <Layout title="Details">
+      <DetailsInner />
+    </Layout>
+  );
+};
 
 export default Details;

@@ -1,6 +1,6 @@
 ﻿import { Link } from "gatsby";
 import React, { useState, useEffect } from "react";
-import { Layout } from "./shared/layout";
+import { Layout } from "../components/shared/layout";
 import { getEmployees, useDeleteEmployee } from "../hooks/employee-hooks";
 
 /**
@@ -11,7 +11,6 @@ import { getEmployees, useDeleteEmployee } from "../hooks/employee-hooks";
  * @returns
  */
 const Employees = (props: any) => {
-
   // The hook calls need to happen within the layout context, which is why
   // two components are used.
   const EmployeesInner = (props: any) => {
@@ -22,7 +21,7 @@ const Employees = (props: any) => {
       <React.Fragment>
         <h2>Index</h2>
         <p>
-          <a href="/Employees/Create">Create New</a>
+          <Link to="/Employees/Create">Create New</Link>
         </p>
         <table className="table">
           <tbody>
@@ -36,7 +35,7 @@ const Employees = (props: any) => {
               <th></th>
             </tr>
             {!!employees &&
-              employees.map(employee => (
+              employees.map((employee) => (
                 <tr>
                   <td>{employee.city}</td>
                   <td>{employee.department}</td>
@@ -45,17 +44,25 @@ const Employees = (props: any) => {
                   <td>{employee.lastName}</td>
                   <td>{employee.address}</td>
                   <td>
-                    <a href={"/Employees/Edit?id=" + employee.id}> Edit </a> |
-                    <a href={"/Employees/Details?id=" + employee.id}> Details </a> |
-                    <a href={"/Employees/Delete?id=" + employee.id}> Delete </a>
+                    <Link to={"/Employees/Edit?id=" + employee.id}> Edit </Link>{" "}
+                    |
+                    <Link to={"/Employees/Details?id=" + employee.id}>
+                      {" "}
+                      Details{" "}
+                    </Link>{" "}
+                    |
+                    <Link to={"/Employees/Delete?id=" + employee.id}>
+                      {" "}
+                      Delete{" "}
+                    </Link>
                   </td>
                 </tr>
               ))}
           </tbody>
         </table>
       </React.Fragment>
-    )
-  }
+    );
+  };
 
   return (
     <Layout title="Index">

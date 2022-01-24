@@ -47,7 +47,7 @@ const Layout = (props: any) => {
                     <Link to="/Employees">Employees</Link>
                   </li>
                   <li id="DepartmentsButton">
-                    Html.ActionLink("Departments", "Index", "Departments")
+                    <Link to="/Departments">Departments</Link>
                   </li>
                 </ul>
               </li>

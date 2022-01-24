@@ -1,6 +1,6 @@
 ﻿import React, { useState } from "react";
 import { Link, navigate } from "gatsby";
-import { Layout } from "../shared/layout";
+import { Layout } from "../../components/shared/layout";
 import { useCreateEmployee } from "../../hooks/employee-hooks";
 import { EmployeeForm } from "../../components/employee-form";
 

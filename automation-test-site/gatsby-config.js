@@ -1,9 +1,7 @@
 module.exports = {
-    pathPrefix: 'automation-test-site',
-    siteMetadata: {
-        siteUrl: `https://www.yourdomain.tld`,
-    },
-    plugins: [
-
-    ]
-}
+  pathPrefix: "AutomationTestSite",
+  siteMetadata: {
+    siteUrl: `https://brannengh.github.io/AutomationTestSite/`,
+  },
+  plugins: [],
+};

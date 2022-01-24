@@ -2,7 +2,7 @@
 import { navigate } from "gatsby";
 import { EmployeeForm } from "../../components/employee-form";
 import { useEditEmployee, useGetEmployee } from "../../hooks/employee-hooks";
-import { Layout } from "../shared/layout";
+import { Layout } from "../../components/shared/layout";
 
 const Edit = (props: any) => {
   const EditInner = (props: any) => {
@@ -19,7 +19,6 @@ const Edit = (props: any) => {
       setId(queryId);
       const employee = getEmployee(queryId);
       setEmployee(employee);
-      debugger;
     }, []);
 
     return (

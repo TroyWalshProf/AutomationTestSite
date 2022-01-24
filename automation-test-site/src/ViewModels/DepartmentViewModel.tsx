@@ -1,6 +1,6 @@
 ﻿class DepartmentViewModel {
-    departments: object 
-    employees: object[]
+  departments: object;
+  employees: object[];
 }
 
-export { DepartmentViewModel }
+export { DepartmentViewModel };

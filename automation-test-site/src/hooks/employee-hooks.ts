@@ -8,8 +8,8 @@ const getEmployees = () => {
     const getDepartment = useGetDepartment();
 
     return state.employees.map(employee => {
-        employee.state = getState(employee.stateId).state;
-        employee.department = getDepartment(employee.departmentId).department;
+        employee.state = getState(employee.stateId)?.state;
+        employee.department = getDepartment(employee.departmentId)?.department;
         return employee;
     });
 }

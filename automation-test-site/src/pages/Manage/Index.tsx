@@ -1,5 +1,5 @@
 ﻿import * as React from 'react';
-import { Layout } from '../shared/layout';
+import { Layout } from '../../components/shared/layout';
 
 const Index = (props: any) => {
     return (

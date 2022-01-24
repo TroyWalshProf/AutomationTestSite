@@ -1,7 +1,7 @@
 ﻿import { Link, navigate } from "gatsby";
 import React, { useEffect, useState } from "react";
 import { useDeleteEmployee, useGetEmployee } from "../../hooks/employee-hooks";
-import { Layout } from "../shared/layout";
+import { Layout } from "../../components/shared/layout";
 
 const Delete = (props: any) => {
   const DeleteInner = (props: any) => {
