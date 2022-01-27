@@ -21,6 +21,8 @@ const HTML = (props) => {
           {!!props.title ? props.title + " - " : ""}Magenic Automation Test Site
         </title>
         <link rel="icon" href="/Content/favicon.ico" />
+        <script src="/AutomationTestSite/jquery.min.js" />
+        <script src="/AutomationTestSite/jquery-ui.min.js" />
         {props.headComponents}
       </head>
       {props.preBodyComponents}

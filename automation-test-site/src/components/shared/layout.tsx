@@ -13,6 +13,7 @@ import { ApplicationContext } from "../../hooks/context-hooks";
  * Ported from Views/Shared/_Layout.cshtml
  *
  * TODO: Fix page title.
+ * TODO: Make static path prefixing context aware.
  * @param props React props. Children are required, and a page title is optional.
  * @returns A React element that wraps the children in a navigation bar and footer.
  */
@@ -57,13 +58,13 @@ const Layout = (props: any) => {
                 </a>
                 <ul className="dropdown-menu">
                   <li id="AutomationButton">
-                    Html.ActionLink("Page Elements", "Index", "Automation")
+                    <Link to="/Automation/">Automation</Link>
                   </li>
                   <li id="SwaggerButton">
                     Html.ActionLink("Swagger API", "", "Swagger")
                   </li>
                   <li id="iFrameButton">
-                    Html.ActionLink("iFrame","iFramePage","Automation")
+                    <Link to="/Automation/iFramePage">iFramePage</Link>
                   </li>
                 </ul>
               </li>
@@ -73,13 +74,19 @@ const Layout = (props: any) => {
                 </a>
                 <ul className="dropdown-menu">
                   <li id="iFrameButton">
-                    <a href="Training1/LoginPage.html">Training Page 1</a>
+                    <a href="/AutomationTestSite/Training1/LoginPage.html">
+                      Training Page 1
+                    </a>
                   </li>
                   <li id="iFrameButton">
-                    <a href="Training2/LoginPage.html">Training Page 2</a>
+                    <a href="/AutomationTestSite/Training2/LoginPage.html">
+                      Training Page 2
+                    </a>
                   </li>
                   <li id="iFrameButton">
-                    <a href="Training3/LoginPage.html">Training Page 3</a>
+                    <a href="/AutomationTestSite/Training3/LoginPage.html">
+                      Training Page 3
+                    </a>
                   </li>
                 </ul>
               </li>
@@ -103,7 +110,7 @@ const Layout = (props: any) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.elementType.isRequired,
+  children: PropTypes.any.isRequired,
   title: PropTypes.string,
 };
 

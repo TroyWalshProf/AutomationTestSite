@@ -7,9 +7,10 @@
     "gatsby"
   ],
   "scripts": {
+    "copy-dependencies": "shx cp node_modules/jquery/dist/jquery.min.js node_modules/jqueryui/jquery-ui.min.js static/",
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build && shx cp -r static/* public/",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "push": "gatsby build --prefix-paths && gh-pages -f -d public",
@@ -19,6 +20,8 @@
   },
   "dependencies": {
     "gatsby": "^4.5.1",
+    "jquery": "^3.6.0",
+    "jqueryui": "^1.11.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

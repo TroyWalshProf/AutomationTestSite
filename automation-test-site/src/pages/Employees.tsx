@@ -44,16 +44,14 @@ const Employees = (props: any) => {
                   <td>{employee.lastName}</td>
                   <td>{employee.address}</td>
                   <td>
-                    <Link to={"/Employees/Edit?id=" + employee.id}> Edit </Link>{" "}
+                    <Link to={"/Employees/Edit?id=" + employee.id}> Edit </Link>
                     |
                     <Link to={"/Employees/Details?id=" + employee.id}>
-                      {" "}
-                      Details{" "}
-                    </Link>{" "}
+                      Details
+                    </Link>
                     |
                     <Link to={"/Employees/Delete?id=" + employee.id}>
-                      {" "}
-                      Delete{" "}
+                      Delete
                     </Link>
                   </td>
                 </tr>

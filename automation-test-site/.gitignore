@@ -1,3 +1,5 @@
 node_modules/
 .cache/
 public
+jquery*.js
+jquery-ui*.js
