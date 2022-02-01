@@ -7,11 +7,11 @@
     "gatsby"
   ],
   "scripts": {
-    "copy-dependencies": "shx cp node_modules/jquery/dist/jquery.min.js node_modules/jqueryui/jquery-ui.min.js static/",
+    "copy-dependencies": "shx cp node_modules/jquery/dist/jquery.min.js node_modules/jqueryui/jquery-ui.min.js node_modules/jqueryui/jquery-ui.min.css static/",
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
+    "build": "gatsby build --prefix-paths",
+    "serve": "gatsby serve --prefix-paths",
     "clean": "gatsby clean",
     "push": "gatsby build --prefix-paths && gh-pages -f -d public",
     "docker-build": "docker build -t automation-test-site --label automation-test-site .",
@@ -26,6 +26,7 @@
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
+    "@types/node": "^17.0.13",
     "gh-pages": "^3.2.3",
     "prettier": "^2.5.1",
     "prop-types": "^15.8.1",

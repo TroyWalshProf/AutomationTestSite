@@ -3,3 +3,4 @@ node_modules/
 public
 jquery*.js
 jquery-ui*.js
+jquery-ui*.css

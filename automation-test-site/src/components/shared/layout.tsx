@@ -98,13 +98,29 @@ const Layout = (props: any) => {
           </div>
         </div>
       </div>
-      <div className="container body-content">
-        {props.children}
-        <hr />
-        <footer>
-          <p>&copy; {new Date().getFullYear()} - Magenic Technologies</p>
-        </footer>
-      </div>
+      {!!props.dangerouslySetInnerHTML ? (
+        <div
+          className="container body-content"
+          dangerouslySetInnerHTML={{
+            __html:
+              props.dangerouslySetInnerHTML.__html +
+              /* Add footer to the end */ `
+            <hr />
+            <footer>
+              <p>&copy; {new Date().getFullYear()} - Magenic Technologies</p>
+            </footer>         
+          `,
+          }}
+        />
+      ) : (
+        <div className="container body-content">
+          {props.children}
+          <hr />
+          <footer>
+            <p>&copy; {new Date().getFullYear()} - Magenic Technologies</p>
+          </footer>
+        </div>
+      )}
     </ApplicationContext>
   );
 };
@@ -112,6 +128,7 @@ const Layout = (props: any) => {
 Layout.propTypes = {
   children: PropTypes.any.isRequired,
   title: PropTypes.string,
+  dangerouslySetInnerHTML: PropTypes.object,
 };
 
 export { Layout };
