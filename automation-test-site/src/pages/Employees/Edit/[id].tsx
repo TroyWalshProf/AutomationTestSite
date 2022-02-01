@@ -1,8 +1,8 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { navigate } from "gatsby";
-import { EmployeeForm } from "../../components/employee-form";
-import { useEditEmployee, useGetEmployee } from "../../hooks/employee-hooks";
-import { Layout } from "../../components/shared/layout";
+import { EmployeeForm } from "../../../components/employee-form";
+import { useEditEmployee, useGetEmployee } from "../../../hooks/employee-hooks";
+import { Layout } from "../../../components/shared/layout";
 
 const Edit = (props: any) => {
   const EditInner = (props: any) => {
@@ -13,9 +13,7 @@ const Edit = (props: any) => {
     const [id, setId] = useState<number>(undefined);
 
     useEffect(() => {
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      const queryId = Number.parseInt(urlParams.get("id"));
+      const queryId = props.id;
       setId(queryId);
       const employee = getEmployee(queryId);
       setEmployee(employee);
@@ -39,7 +37,7 @@ const Edit = (props: any) => {
   };
   return (
     <Layout title="Edit">
-      <EditInner />
+      <EditInner id={props.params.id} />
     </Layout>
   );
 };

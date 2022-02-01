@@ -1,8 +1,8 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
-import { Layout } from "../../components/shared/layout";
-import { getEmployees } from "../../hooks/employee-hooks";
-import { useGetDepartment } from "../../hooks/department-hooks";
+import { Layout } from "../../../components/shared/layout";
+import { getEmployees } from "../../../hooks/employee-hooks";
+import { useGetDepartment } from "../../../hooks/department-hooks";
 
 const Details = (props: any) => {
   const DetailsInner = (props: any) => {
@@ -13,9 +13,7 @@ const Details = (props: any) => {
     const getDepartment = useGetDepartment();
 
     useEffect(() => {
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      const queryId = Number.parseInt(urlParams.get("id"));
+      const queryId = props.id;
       setId(queryId);
       setDepartment(getDepartment(queryId));
       setEmployees(
@@ -68,7 +66,7 @@ const Details = (props: any) => {
 
   return (
     <Layout title="Details">
-      <DetailsInner />
+      <DetailsInner id={props.params.id} />
     </Layout>
   );
 };

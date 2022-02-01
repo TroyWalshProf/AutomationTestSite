@@ -1,10 +1,10 @@
-﻿import { navigate, Link } from "gatsby";
+import { navigate, Link } from "gatsby";
 import React, { useEffect, useState } from "react";
-import { Layout } from "../../components/shared/layout";
+import { Layout } from "../../../components/shared/layout";
 import {
   useEditDepartment,
   useGetDepartment,
-} from "../../hooks/department-hooks";
+} from "../../../hooks/department-hooks";
 
 const Edit = (props: any) => {
   const EditInner = (props: any) => {
@@ -14,9 +14,7 @@ const Edit = (props: any) => {
     const editDepartment = useEditDepartment();
 
     useEffect(() => {
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      const queryId = Number.parseInt(urlParams.get("id"));
+      const queryId = props.id;
       setId(queryId);
       setDepartment(getDepartment(queryId));
     }, []);
@@ -105,7 +103,7 @@ const Edit = (props: any) => {
 
   return (
     <Layout title="Edit">
-      <EditInner />
+      <EditInner id={props.params.id} />
     </Layout>
   );
 };

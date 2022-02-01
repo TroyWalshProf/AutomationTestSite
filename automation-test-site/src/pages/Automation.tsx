@@ -201,7 +201,7 @@ const innerHtml = `
 <ul style="list-style-type:none;padding:0px;margin:0px;">
 <li id="ErrorPageLink"><a href="/AutomationTestSite/NotYetImplemented">500 Error page</a></li>
 <li id="AsyncPageLink"><a href="/AutomationTestSite/Automation/AsyncPage">Async page</a></li>
-<li id="SwaggerPageLink"><a href="/AutomationTestSite/NotYetImplemented">Swagger API</a></li>
+<li id="SwaggerPageLink"><a href="/AutomationTestSite/Swagger">Swagger API</a></li>
 </ul>
 
 <div id="ItemsToAutomate">

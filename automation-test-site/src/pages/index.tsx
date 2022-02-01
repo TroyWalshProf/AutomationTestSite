@@ -11,7 +11,6 @@ const IndexPage = () => {
           style={{ display: "block", margin: "auto" }}
         />
         <h2 className="text-center">Automation Test Site</h2>
-        <p>process.env.GATSBY</p>
       </div>
     </Layout>
   );

@@ -1,10 +1,10 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, navigate } from "gatsby";
-import { Layout } from "../../components/shared/layout";
+import { Layout } from "../../../components/shared/layout";
 import {
   useDeleteDepartment,
   useGetDepartment,
-} from "../../hooks/department-hooks";
+} from "../../../hooks/department-hooks";
 
 const Delete = (props: any) => {
   const DeleteInner = (props: any) => {
@@ -14,9 +14,7 @@ const Delete = (props: any) => {
     const deleteDepartment = useDeleteDepartment();
 
     useEffect(() => {
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      const queryId = Number.parseInt(urlParams.get("id"));
+      const queryId = props.id;
       setId(queryId);
       const department = getDepartment(queryId);
       setDepartment(department);
@@ -54,7 +52,7 @@ const Delete = (props: any) => {
 
   return (
     <Layout title="Delete">
-      <DeleteInner />
+      <DeleteInner id={props.params.id} />
     </Layout>
   );
 };

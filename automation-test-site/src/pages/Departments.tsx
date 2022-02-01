@@ -24,14 +24,11 @@ const Departments = (props: any) => {
             <tr>
               <td>{department.department}</td>
               <td>
-                <Link to={`/Departments/Edit?id=${department.id}`}>Edit</Link>|
-                <Link to={`/Departments/Details?id=${department.id}`}>
+                <Link to={`/Departments/Edit/${department.id}`}>Edit</Link>|
+                <Link to={`/Departments/Details/${department.id}`}>
                   Details
                 </Link>
-                |
-                <Link to={`/Departments/Delete?id=${department.id}`}>
-                  Delete
-                </Link>
+                |<Link to={`/Departments/Delete/${department.id}`}>Delete</Link>
               </td>
             </tr>
           ))}
