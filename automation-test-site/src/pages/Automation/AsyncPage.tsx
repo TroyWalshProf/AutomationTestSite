@@ -26,11 +26,8 @@ const javascript = [
     $("#LoadingLabel").hide();
     clearInterval(myVar);
   }
-}
-
-
-
-$(document).ready(function () {
+}`,
+`$(document).ready(function () {
   
   $("#loading-div-text").hide();
   var lingerTime = (Math.floor(Math.random() * (10 - 1 + 1)) + 1) * 1000;
@@ -43,6 +40,8 @@ $(document).ready(function () {
     
     clearInterval(myVar);
   }
+
+  asyncUpdate();
 });`,
 ];
 
@@ -73,7 +72,7 @@ const AsyncPage = (props: any) => {
     <br />
     <div class="roundedcorners">
         <div id="loading-div" class="ui-corner-all">
-            <img id="LoadingIconImage" src="/AutomationTestSite/ContentImages/loading.gif" alt="Loading.." height="50" style="display:block;margin:auto;" />
+            <img id="LoadingIconImage" src="/AutomationTestSite/Content/Images/loading.gif" alt="Loading.." height="50" style="display:block;margin:auto;" />
             
         </div>
         <div id="loading-div-text">
