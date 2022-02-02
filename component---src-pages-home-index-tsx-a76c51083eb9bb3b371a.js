@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk_cognizant_softvision_automation_test_site=self.webpackChunk_cognizant_softvision_automation_test_site||[]).push([[258],{9471:function(t,e,n){n.r(e);var a=n(7294),o=n(8177);e.default=function(){return a.createElement(o.A,{title:"Homepage"},a.createElement("div",{className:"jumbotron"},a.createElement("img",{src:"/AutomationTestSite/ContentImages/Magenic-Logo.png"}),a.createElement("h2",{className:"text-center"},"Automation Test Site")))}}}]);
+//# sourceMappingURL=component---src-pages-home-index-tsx-a76c51083eb9bb3b371a.js.map

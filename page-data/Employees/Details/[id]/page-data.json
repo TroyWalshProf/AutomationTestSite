@@ -1,0 +1,6 @@
+{
+    "componentChunkName": "component---src-pages-employees-details-[id]-tsx",
+    "path": "/Employees/Details/[id]/",
+    "result": {"pageContext":{}},
+    "staticQueryHashes": [],
+    "matchPath": "/Employees/Details/:id"}

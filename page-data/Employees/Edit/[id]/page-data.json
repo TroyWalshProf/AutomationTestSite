@@ -1,0 +1,6 @@
+{
+    "componentChunkName": "component---src-pages-employees-edit-[id]-tsx",
+    "path": "/Employees/Edit/[id]/",
+    "result": {"pageContext":{}},
+    "staticQueryHashes": [],
+    "matchPath": "/Employees/Edit/:id"}

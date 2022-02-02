@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk_cognizant_softvision_automation_test_site=self.webpackChunk_cognizant_softvision_automation_test_site||[]).push([[774],{2278:function(e,t,r){r.r(t);var n=r(7294),s=r(8127);t.default=function(){return n.createElement(s.A,{title:"Error"},n.createElement("h1",{className:"text-danger"},"Error."),n.createElement("h2",{className:"text-danger"},"An error occurred while processing your request."))}}}]);
+//# sourceMappingURL=component---src-pages-shared-error-tsx-9dbf7a32c9d79c9ec90d.js.map

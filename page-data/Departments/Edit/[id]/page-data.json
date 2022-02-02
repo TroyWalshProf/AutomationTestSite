@@ -1,0 +1,6 @@
+{
+    "componentChunkName": "component---src-pages-departments-edit-[id]-tsx",
+    "path": "/Departments/Edit/[id]/",
+    "result": {"pageContext":{}},
+    "staticQueryHashes": [],
+    "matchPath": "/Departments/Edit/:id"}

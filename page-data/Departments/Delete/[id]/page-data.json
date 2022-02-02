@@ -1,0 +1,6 @@
+{
+    "componentChunkName": "component---src-pages-departments-delete-[id]-tsx",
+    "path": "/Departments/Delete/[id]/",
+    "result": {"pageContext":{}},
+    "staticQueryHashes": [],
+    "matchPath": "/Departments/Delete/:id"}

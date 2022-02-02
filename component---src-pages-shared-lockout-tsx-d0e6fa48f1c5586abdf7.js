@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk_cognizant_softvision_automation_test_site=self.webpackChunk_cognizant_softvision_automation_test_site||[]).push([[566],{660:function(e,t,a){a.r(t);var n=a(7294),s=a(8127);t.default=function(){return n.createElement(s.A,{title:"Locked Out"},n.createElement("hgroup",null,n.createElement("h1",{className:"text-danger"},"Locked out."),n.createElement("h2",{className:"text-danger"},"This account has been locked out, please try again later.")))}}}]);
+//# sourceMappingURL=component---src-pages-shared-lockout-tsx-d0e6fa48f1c5586abdf7.js.map
