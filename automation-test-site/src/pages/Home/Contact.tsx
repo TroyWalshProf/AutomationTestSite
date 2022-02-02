@@ -4,8 +4,8 @@ import { Layout } from "../../components/shared/layout";
 const Contact = (props: any) => {
   return (
     <Layout title="Contact">
-      <h2 id="AboutMessage">ViewBag.Message</h2>
-      <h3 id="AboutTitle">ViewBag.Title</h3>
+      <h2 id="AboutMessage">Magenic Automation Site</h2>
+      <h3 id="AboutTitle">Contact</h3>
 
       <address id="Address">
         1600 Utica Ave S<br />
@@ -16,7 +16,7 @@ const Contact = (props: any) => {
       </address>
 
       <address id="MailTo">
-        <strong>Support:</strong>{" "}
+        <strong>Support:</strong>
         <a href="mailto:Support@example.com">TroyW@magenic.com</a>
         <br />
       </address>

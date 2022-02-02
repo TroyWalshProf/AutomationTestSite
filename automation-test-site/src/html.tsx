@@ -17,9 +17,7 @@ const HTML = (props) => {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-          {!!props.title ? props.title + " - " : ""}Magenic Automation Test Site
-        </title>
+
         <link rel="icon" href="/AutomationTestSite/Content/favicon.ico" />
         <script src="/AutomationTestSite/jquery.min.js" />
         <script src="/AutomationTestSite/jquery-ui.min.js" />

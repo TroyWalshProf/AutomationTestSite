@@ -15,23 +15,29 @@ const Departments = (props: any) => {
           <Link to="/Departments/Create">Create New</Link>
         </p>
         <table className="table">
-          <tr>
-            <th>Department</th>
-            <th></th>
-          </tr>
-
-          {departments.map((department) => (
+          <tbody>
             <tr>
-              <td>{department.department}</td>
-              <td>
-                <Link to={`/Departments/Edit/${department.id}`}>Edit</Link>|
-                <Link to={`/Departments/Details/${department.id}`}>
-                  Details
-                </Link>
-                |<Link to={`/Departments/Delete/${department.id}`}>Delete</Link>
-              </td>
+              <th>Department</th>
+              <th></th>
             </tr>
-          ))}
+
+            {departments.map((department) => (
+              <tr>
+                <td>{department.department}</td>
+                <td>
+                  <Link to={`/Departments/Edit/${department.id}`}>Edit</Link>
+                  {" | "}
+                  <Link to={`/Departments/Details/${department.id}`}>
+                    Details
+                  </Link>
+                  {" | "}
+                  <Link to={`/Departments/Delete/${department.id}`}>
+                    Delete
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </React.Fragment>
     );

@@ -3,5 +3,5 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://brannengh.github.io/AutomationTestSite/`,
   },
-  plugins: [],
+  plugins: [`gatsby-plugin-react-helmet`],
 };

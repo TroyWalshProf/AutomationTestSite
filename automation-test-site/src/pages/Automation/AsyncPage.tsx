@@ -21,13 +21,13 @@ const javascript = [
     option = document.createElement("option");
     option.text = "Third";
     x.add(option);
-    $("#AsyncContent").show();
+    $("#AsyncContent").css( "display", "block" );
     document.getElementById('Label').innerHTML = 'Options';
     $("#LoadingLabel").hide();
     clearInterval(myVar);
   }
 }`,
-`$(document).ready(function () {
+  `$(document).ready(function () {
   
   $("#loading-div-text").hide();
   var lingerTime = (Math.floor(Math.random() * (10 - 1 + 1)) + 1) * 1000;

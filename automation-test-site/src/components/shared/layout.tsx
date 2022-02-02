@@ -7,6 +7,7 @@ import "../../../static/Content/bootstrap.css";
 import "../../../static/Content/Site.css";
 import "./layout.css";
 import { ApplicationContext } from "../../hooks/context-hooks";
+import { Helmet } from "react-helmet";
 
 /**
  * Layout for the Magenic Automation Site pages.
@@ -20,6 +21,11 @@ import { ApplicationContext } from "../../hooks/context-hooks";
 const Layout = (props: any) => {
   return (
     <ApplicationContext>
+      <Helmet>
+        <title>
+          {!!props.title ? props.title + " - " : ""}Magenic Automation Test Site
+        </title>
+      </Helmet>
       <div className="navbar navbar-inverse navbar-fixed-top">
         <div className="container">
           <div className="navbar-header">
@@ -58,13 +64,13 @@ const Layout = (props: any) => {
                 </a>
                 <ul className="dropdown-menu">
                   <li id="AutomationButton">
-                    <Link to="/Automation/">Automation</Link>
+                    <Link to="/Automation/">Page Elements</Link>
                   </li>
                   <li id="SwaggerButton">
-                    Html.ActionLink("Swagger API", "", "Swagger")
+                    <Link to="/Swagger/">Swagger API</Link>
                   </li>
                   <li id="iFrameButton">
-                    <Link to="/Automation/iFramePage">iFramePage</Link>
+                    <Link to="/Automation/iFramePage">iFrame</Link>
                   </li>
                 </ul>
               </li>
@@ -91,7 +97,7 @@ const Layout = (props: any) => {
                 </ul>
               </li>
               <li id="ContactButton">
-                Html.ActionLink("Contact", "Contact", "Home")
+                <Link to="/Home/Contact">Contact</Link>
               </li>
             </ul>
             {false ?? <LoginForm /> /*Commented out in legacy ASP application*/}

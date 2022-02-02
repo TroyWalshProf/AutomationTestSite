@@ -244,6 +244,7 @@ const EmployeeForm = (props: any) => {
         <div className="form-group">
           <div className="col-md-offset-2 col-md-10">
             <input
+              type="submit"
               onClick={() => props.onSubmit(employee)}
               value={props.isCreate ? "Create" : "Edit"}
               className="btn btn-default"
