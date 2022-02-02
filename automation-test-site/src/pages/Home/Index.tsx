@@ -5,7 +5,7 @@ const Index = () => {
   return (
     <Layout title="Homepage">
       <div className="jumbotron">
-        <img src="/AutomationTestSite/ContentImages/Magenic-Logo.png" />
+        <img src="/AutomationTestSite/Content/Images/Magenic-Logo.png" />
         <h2 className="text-center">Automation Test Site</h2>
       </div>
     </Layout>
